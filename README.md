@@ -1,7 +1,7 @@
 # Python-Voice-Assistant - NOTE: IN PROGRESS
 
 Module list:
-  - speech_recognition as sr (pip install SpeechRecognition)
+  - SpeechRecognition (pip install SpeechRecognition)
   - playsound (pip install playsound)
   - gTTS (pip install gTTS)
   - wolframalpha (pip install wolframalpha) ==> REQUIRES API KEY FROM THEIR SITE (free 2000 api calls/month)
