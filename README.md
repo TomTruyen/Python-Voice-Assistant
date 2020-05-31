@@ -1,4 +1,4 @@
-# Python-Voice-Assistant
+# Python-Voice-Assistant - NOTE: IN PROGRESS
 
 Module list:
   - speech_recognition as sr (pip install SpeechRecognition)
