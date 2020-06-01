@@ -6,7 +6,22 @@ import os
 import wolframalpha
 import webbrowser
 
+# TODO
+
+#use sound effects instead of some spoken things like 'Shutdown' should just make a sound instead of saying it
+
+# Add Arrays of Phrases (insulting) for each question. Add multiple phrases for each question and put it in an array and choose a random option from it
+# Improve list of commands (so there are more options)
+# All 'Open' applications should also have a 'Close' option by saying for example: "Close Mail" to close outlookmail:
+# Make it wait with asking a command until the previous one is finished. Example: When opening FireFox (which takes quite some time) the program should wait until an actual window of FireFox is active
+# Fix the Calculate one (maybe try to use a different API for it, that has unlimited calls preferably)
+# Make basic GUI (like Google Assistant on Phone)
+# Turn it into an Executable + Make a version that works on mobile phones
+
+
 num = 1
+
+
 def assistant_speaks(output):
     global num
 
@@ -130,7 +145,7 @@ def process_text(text_val):
             assistant_speaks(speak)
             return
         elif "calculate" in text_val.lower():
-            app_id = "WOLFRAMALPHA_API_KEY_HERE"
+            app_id = "VH8A6Y-EYQTE254K4"
             client = wolframalpha.Client(app_id)
 
             indx = text_val.lower().split().index('calculate')
@@ -151,10 +166,11 @@ def process_text(text_val):
 
 if __name__ == "__main__":
     while True:
-        text = get_start_command()
-        if "ok assistant" in str(text) or "okay assistant" in str(text):
+        text = get_start_command().lower()
+        if "echo" in str(text):
             while True:
-                assistant_speaks("What do you want?")
+                playsound.playsound("beep.mp3")
+                print("How can I help?")
                 text = get_audio()
 
                 if text == '0':
