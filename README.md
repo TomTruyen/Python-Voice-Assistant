@@ -11,7 +11,7 @@ Module list:
 Basic Python Voice Assistant (in progress) as replacement for assistants like 'Cortana' and in the future 'Google Assistant/Siri)
 
 To start using:
-say: "ok assistant"
+say: "echo"
 
 After that these are possible commands:
 - "google [search]" --> prints (in console) google URL for the 'search'
