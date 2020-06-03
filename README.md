@@ -13,9 +13,9 @@ Module list:
 Basic Python Voice Assistant (in progress) as replacement for assistants like 'Cortana' and in the future 'Google Assistant/Siri)
 
 To start using:
-say: "hey echo"
+say: "hey echo [command]"
 
-After that these are possible commands:
+Possible commands:
 - "google [search]" --> prints (in console) google URL for the 'search'
 - "who are you" --> says: 'Hello, I am Person. Your personal Assistant. I am here to make your life easier.'
 - "who made you" --> says: "I have been created by Tom Truyen"
