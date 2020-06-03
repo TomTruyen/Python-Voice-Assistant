@@ -8,7 +8,7 @@ import webbrowser
 
 # TODO
 
-#use sound effects instead of some spoken things like 'Shutdown' should just make a sound instead of saying it
+# use sound effects instead of some spoken things like 'Shutdown' should just make a sound instead of saying it
 
 # Add Arrays of Phrases (insulting) for each question. Add multiple phrases for each question and put it in an array and choose a random option from it
 # Improve list of commands (so there are more options)
@@ -121,6 +121,7 @@ def open_application(input):
         assistant_speaks("Application not available")
         return
 
+
 def search_google(text_val):
     text_val = text_val.replace('google', '').strip()
 
@@ -144,6 +145,9 @@ def process_text(text_val):
             speak = "I have been created by Tom Truyen"
             assistant_speaks(speak)
             return
+        elif "play" in text_val:
+            # Do something here to play music
+            return
         elif "calculate" in text_val.lower():
             app_id = "VH8A6Y-EYQTE254K4"
             client = wolframalpha.Client(app_id)
@@ -164,23 +168,18 @@ def process_text(text_val):
         assistant_speaks("Could not understand, Please try again")
 
 
+
+#Make program start after saying 'hey echo [command]'
+#Add a command Example: 'play Paradise by Coldplay' then it will play it using either youtube or spotify (or it asks the question which one you prefer if not mentioned in the initial command)
+
 if __name__ == "__main__":
     while True:
-        text = get_start_command().lower()
-        if "echo" in str(text):
-            while True:
-                playsound.playsound("beep.mp3")
-                print("How can I help?")
-                text = get_audio()
+        text = get_start_command()
+        if "hey echo" in str(text).lower():
+            text = text.lower().replace('hey echo', '')
+            process_text(text)
 
-                if text == '0':
-                    continue
-                if "exit" in str(text) or "bye" in str(text) or "stop" in str(text):
-                    assistant_speaks("Bye.")
-                    break
-
-                process_text(text)
-        elif "stop spying" in str(text) or "leave me alone" in str(text) or "shutdown" in str(
+        elif "shutdown" in str(
                 text) or "shut down" in str(text):
             assistant_speaks("Okay I'll shutdown.")
             break
